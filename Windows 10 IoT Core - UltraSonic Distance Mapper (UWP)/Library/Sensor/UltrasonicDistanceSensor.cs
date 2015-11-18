@@ -90,7 +90,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Sensor
             mre.Wait(TimeSpan.FromMilliseconds(0.01));
             Pin_Trig.Write(GpioPinValue.Low);
 
-            var time = PulseIn(Pin_Echo, GpioPinValue.High, 500);
+            var time = PulseIn(Pin_Echo, GpioPinValue.High, 20); // was 500ms
 
             // multiply by speed of sound in milliseconds (34000) divided by 2 (cause pulse make rountrip)
             var distance = time * 17000;

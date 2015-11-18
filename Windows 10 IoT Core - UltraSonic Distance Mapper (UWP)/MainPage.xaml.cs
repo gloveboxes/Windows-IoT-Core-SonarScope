@@ -108,20 +108,24 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
                         Grid_Mapper.Children.Clear();
                     }
 
-                    /* Do not plot object > 500 cm */
-                    if (Distance > 500)
-                    {
-                        Distance = 0;
-                    }
+                    ///* Do not plot object > 500 cm */
+                    //if (Distance > 350)
+                    //{
+                    //    Distance = 0;
+                    //}
 
-                    /* LiDAR map developed for this project is only for up-to 300 cm. Thus eliminate higher distances. */
-                    if (Distance > 299)
-                    {
-                        Distance = 299;
-                    }
+                    ///* LiDAR map developed for this project is only for up-to 300 cm. Thus eliminate higher distances. */
+                    //if (Distance > 299)
+                    //{
+                    //    Distance = 299;
+                    //}
 
                     /* Plot distance into LiDAR map */
-                    Grid_Mapper.Children.Add(DistanceMapper.GetMapper(ScannerLine.Angle, (int)Distance));
+                    if (Distance > 0 && Distance < 270)
+                    {
+                        Grid_Mapper.Children.Add(DistanceMapper.GetMapper(ScannerLine.Angle, (int)Distance));
+                    }
+
                 });
 
                 /* Hold for 5ms to take breath entire system */
