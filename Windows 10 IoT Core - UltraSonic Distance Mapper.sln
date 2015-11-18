@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)", "Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)\Windows 10 IoT Core - UltraSonic Distance Mapper (UWP).csproj", "{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Radar", "Radar\Radar.vcxproj", "{7B99EE9B-5159-451B-B4A6-7B8F001DD839}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|ARM.ActiveCfg = Debug|ARM
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|ARM.Build.0 = Debug|ARM
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|ARM.Deploy.0 = Debug|ARM
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|x64.ActiveCfg = Debug|x64
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|x64.Build.0 = Debug|x64
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|x64.Deploy.0 = Debug|x64
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|x86.ActiveCfg = Debug|x86
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|x86.Build.0 = Debug|x86
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Debug|x86.Deploy.0 = Debug|x86
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|ARM.ActiveCfg = Release|ARM
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|ARM.Build.0 = Release|ARM
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|ARM.Deploy.0 = Release|ARM
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x64.ActiveCfg = Release|x64
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x64.Build.0 = Release|x64
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x64.Deploy.0 = Release|x64
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x86.ActiveCfg = Release|x86
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x86.Build.0 = Release|x86
+		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x86.Deploy.0 = Release|x86
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Debug|ARM.ActiveCfg = Debug|Win32
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Debug|x64.ActiveCfg = Debug|x64
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Debug|x64.Build.0 = Debug|x64
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Debug|x86.ActiveCfg = Debug|Win32
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Debug|x86.Build.0 = Debug|Win32
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Release|ARM.ActiveCfg = Release|Win32
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Release|x64.ActiveCfg = Release|x64
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Release|x64.Build.0 = Release|x64
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Release|x86.ActiveCfg = Release|Win32
+		{7B99EE9B-5159-451B-B4A6-7B8F001DD839}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,142 @@
+﻿<Page
+    x:Class="Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Shape="using:WinRTXamlToolkit.Controls" Background="Black">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Radar Screen -->
+        <Grid Grid.Row="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <!-- PieSlices -->
+            <!-- 300cm PieSlice -->
+            <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="300" StartAngle="-70" EndAngle="70" Fill="Black" Stroke="#0d0" StrokeThickness="1" Height="Auto" Margin="-300,0"/>
+            <!-- 250cm PieSlice -->
+            <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="250" StartAngle="-70" EndAngle="70" Fill="Black" Stroke="#0d0" StrokeThickness="1" Height="Auto" Margin="-250,0"/>
+            <!-- 200cm PieSlice -->
+            <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="200" StartAngle="-70" EndAngle="70" Fill="Black" Stroke="#0d0" StrokeThickness="1" Height="Auto" Margin="-200,0"/>
+            <!-- 150cm PieSlice -->
+            <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="150" StartAngle="-70" EndAngle="70" Fill="Black" Stroke="#0d0" StrokeThickness="1" Height="Auto" Margin="-150,0"/>
+            <!-- 100cm PieSlice -->
+            <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="100" StartAngle="-70" EndAngle="70" Fill="#630" Stroke="#fa0" StrokeThickness="1" Height="Auto" Margin="-100,0"/>
+            <!-- 50cm PieSlice -->
+            <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="50" StartAngle="-70" EndAngle="70" Fill="#500" Stroke="#d00" StrokeThickness="1" Height="Auto" Margin="-50,0"/>
+
+            <!-- Scanner Line -->
+            <Line Name="Line_Scanner" X1="0" X2="0" Y1="300" Y2="0" Stroke="#0f0" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Line.RenderTransform>
+                    <RotateTransform x:Name="ScannerLine" CenterX="0" CenterY="300" Angle="0" />
+                </Line.RenderTransform>
+            </Line>
+
+            <!-- Object(s) : Angle & Distance -->
+            <Grid Name="Grid_Mapper">
+
+                <!--<Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Height="Auto" RenderTransformOrigin="0,1">
+                    <Grid.RenderTransform>
+                        <CompositeTransform x:Name="ObjectA_Angle" Rotation="20"/>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Name="ObjectA_Color" Height="10" Width="10" Fill="#0F0" RenderTransformOrigin="0,0" Margin="-10,0"/>
+                    <Line Grid.Row="1" Name="ObjectA_Distance" X1="0" X2="0" Y1="253" Y2="0" Stroke="#0000" StrokeThickness="2"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Height="Auto" RenderTransformOrigin="0,1">
+                    <Grid.RenderTransform>
+                        <CompositeTransform x:Name="ObjectB_Angle" Rotation="20"/>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Name="ObjectB_Color" Height="10" Width="10" Fill="#0F0" RenderTransformOrigin="0,0" Margin="-10,0"/>
+                    <Line Grid.Row="1" Name="ObjectB_Distance" X1="0" X2="0" Y1="253" Y2="0" Stroke="#0000" StrokeThickness="2"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Height="Auto" RenderTransformOrigin="0,1">
+                    <Grid.RenderTransform>
+                        <CompositeTransform x:Name="ObjectC_Angle" Rotation="20"/>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Name="ObjectC_Color" Height="10" Width="10" Fill="#0F0" RenderTransformOrigin="0,0" Margin="-10,0"/>
+                    <Line Grid.Row="1" Name="ObjectC_Distance" X1="0" X2="0" Y1="253" Y2="0" Stroke="#0000" StrokeThickness="2"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Height="Auto" RenderTransformOrigin="0,1">
+                    <Grid.RenderTransform>
+                        <CompositeTransform x:Name="ObjectD_Angle" Rotation="20"/>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Name="ObjectD_Color" Height="10" Width="10" Fill="#0F0" RenderTransformOrigin="0,0" Margin="-10,0"/>
+                    <Line Grid.Row="1" Name="ObjectD_Distance" X1="0" X2="0" Y1="253" Y2="0" Stroke="#0000" StrokeThickness="2"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Height="Auto" RenderTransformOrigin="0,1">
+                    <Grid.RenderTransform>
+                        <CompositeTransform x:Name="ObjectE_Angle" Rotation="20"/>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Name="ObjectE_Color" Height="10" Width="10" Fill="#0F0" RenderTransformOrigin="0,0" Margin="-10,0"/>
+                    <Line Grid.Row="1" Name="ObjectE_Distance" X1="0" X2="0" Y1="253" Y2="0" Stroke="#0000" StrokeThickness="2"/>
+                </Grid>
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="Auto" Height="Auto" RenderTransformOrigin="0,1">
+                    <Grid.RenderTransform>
+                        <CompositeTransform x:Name="ObjectF_Angle" Rotation="20"/>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Ellipse Name="ObjectF_Color" Height="10" Width="10" Fill="#0F0" RenderTransformOrigin="0,0" Margin="-10,0"/>
+                    <Line Grid.Row="1" Name="ObjectF_Distance" X1="0" X2="0" Y1="253" Y2="0" Stroke="#0000" StrokeThickness="2"/>
+                </Grid>-->
+            </Grid>
+
+            <!-- Legends -->
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#0f0" Text="300" Margin="754.147,0,213.68,102.399" FontSize="10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="70"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#0f0" Text="250" Margin="708.014,0,259.813,85.998" FontSize="10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="70"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#0f0" Text="200" Margin="660.413,0,307.414,68.53" FontSize="10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="70"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#0f0" Text="150" Margin="614.147,0,353.68,52.064" FontSize="10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="70"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#fa0" Text="100" Margin="566.481,0,401.346,34.465" FontSize="10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="70"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="#f00" Text="50" Margin="523.677,0,449.541,15.26" FontSize="10" RenderTransformOrigin="0.5,0.5">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform Rotation="70"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Page>
