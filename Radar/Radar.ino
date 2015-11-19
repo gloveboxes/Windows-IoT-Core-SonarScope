@@ -53,6 +53,7 @@ void I2CReceived(int NumberOfBytes)
 	MyServo.write(newPosition);  // Move servo to specified the position //
 
 	digitalWrite(13, LOW);
+	Wire.write()
 
 	processing = false;
 }

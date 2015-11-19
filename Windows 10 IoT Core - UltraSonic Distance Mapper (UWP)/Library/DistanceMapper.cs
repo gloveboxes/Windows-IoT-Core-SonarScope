@@ -44,12 +44,14 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library
             
             _Grid.RenderTransformOrigin = new Windows.Foundation.Point(0, 1);
 
+            int size = Distance / 10;
+
             /* Ellipse is the point that will be mapped on the specified distance from the origin */
             _Ellipse = new Ellipse();
-            _Ellipse.Height = Distance/10;
-            _Ellipse.Width = Distance/10;
+            _Ellipse.Height = size;
+            _Ellipse.Width = size;
             _Ellipse.RenderTransformOrigin = new Windows.Foundation.Point(0, 0);
-            _Ellipse.Margin = new Thickness(-3, 0, -3, 0);
+            _Ellipse.Margin = new Thickness(-size, 0, -size, 0);
             
             /* Apply different color for different region like < 50cm will be red and so on */
             if(Distance < 50)

@@ -108,7 +108,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Sensor
             while (pin.Read() != value)
             {
                 if (sw_timeout.ElapsedMilliseconds > timeout)
-                    return 3.5;
+                    return 0;
             }
             sw.Start();
 
@@ -116,7 +116,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Sensor
             while (pin.Read() == value)
             {
                 if (sw_timeout.ElapsedMilliseconds > timeout)
-                    return 3.4;
+                    return 0;
             }
             sw.Stop();
 

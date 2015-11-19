@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
@@ -50,9 +51,12 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
             double Distance;
             byte Temp;
 
+            var frameTimer = new Stopwatch();
+            frameTimer.Start();
             /* Scan infinitely */
             while (true)
             {
+                var startFrame = frameTimer.ElapsedMilliseconds;
                 /*
                     Take multiple sample of the distance in current sight
                     Higher the sampling, accurate the result but will cause slower scanning.
@@ -61,7 +65,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
                 for (int i = 0; i < NumberOfSample; i++)
                 {
                     Distance += DistanceSensor.GetDistance();   // Add distance
-                    await Task.Delay(1);                        // Wait for a ms
+                    //await Task.Delay(1);                        // Wait for a ms
                 }
                 Distance /= NumberOfSample;                     // Calculate average
 
@@ -96,7 +100,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
 
                 CurrentRotation = (byte)(CurrentRotation + Direction);
 
-                await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                var placeholder = Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 () =>
                 {
                     /* Convert current rotation from 0 to 140 into -70 to +70 */
@@ -127,10 +131,11 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
                     }
 
                 });
-
-                /* Hold for 5ms to take breath entire system */
-                await Task.Delay(5);
-            }
+                var delayTime = 75 - (frameTimer.ElapsedMilliseconds - startFrame);
+                delayTime = delayTime < 0 ? 0 : delayTime;
+                /* Hold for 75ms or less to take breath entire system - 14 cycles per second frame rate */
+                await Task.Delay((int)delayTime);
+            } 
 
         }
     }
