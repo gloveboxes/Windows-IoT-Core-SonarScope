@@ -1,7 +1,9 @@
-﻿using Windows.UI;
+﻿using System;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Shapes;
 
 namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library
@@ -13,7 +15,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library
         private static Line _Line;
         private static CompositeTransform _CompositeTransform;
         private static RowDefinition _RowDefination;
-
+        
         /// <summary>
         /// Returns a grid containing line with exact length and in the rotation specified for LiDAR Map.
         /// </summary>
@@ -52,9 +54,34 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library
             _Ellipse.Width = size;
             _Ellipse.RenderTransformOrigin = new Windows.Foundation.Point(0, 0);
             _Ellipse.Margin = new Thickness(-size, 0, -size, 0);
+            _Ellipse.Tag = System.DateTime.Now;
             
+            // Create a duration of 2 seconds.
+            Duration duration = new Duration(TimeSpan.FromSeconds(2.5));
+            // Create two DoubleAnimations and set their properties.
+            DoubleAnimation opacityAnimation = new DoubleAnimation();
+            opacityAnimation.Duration = duration;
+            Storyboard justintimeStoryboard = new Storyboard();
+            justintimeStoryboard.Duration = duration;
+            justintimeStoryboard.Children.Add(opacityAnimation);
+           
+            Storyboard.SetTarget(opacityAnimation, _Ellipse);
+                     
+            Storyboard.SetTargetProperty(opacityAnimation, "Opacity");
+            opacityAnimation.To = 0;
+            
+            // Make the Storyboard a resource.
+            _Grid.Resources.Add("justintimeStoryboard", justintimeStoryboard);
+
+            // Begin the animation.
+            justintimeStoryboard.Begin();
+
+
+
+
+
             /* Apply different color for different region like < 50cm will be red and so on */
-            if(Distance < 50)
+            if (Distance < 50)
             {
                 _Ellipse.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
             }

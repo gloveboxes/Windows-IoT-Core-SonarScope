@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Shapes;
 using Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library;
 using Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Communication;
 
@@ -107,9 +108,38 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
                     ScannerLine.Angle = CurrentRotation - 70;
 
                     /* If all available angles has been scanned for a direction, clean LiDAR map */
+                    //if (ScannerLine.Angle == -70 || ScannerLine.Angle == 70)
+                    //{
+
+
+                    //    Grid_Mapper.Children.Clear();
+
+
+
+
+                    //}
+
                     if (ScannerLine.Angle == -70 || ScannerLine.Angle == 70)
                     {
-                        Grid_Mapper.Children.Clear();
+                        for (int i = Grid_Mapper.Children.Count - 1; i >= 0; i--)
+                        {
+                            var o = Grid_Mapper.Children[i];
+
+                            if (o is Ellipse)
+                            {
+                                try
+                                {
+
+                                    var oo = (Ellipse)o;
+                                    if (oo.Opacity <= 0)
+                                    {
+                                        Grid_Mapper.Children.RemoveAt(i);
+                                    }
+                                }
+                                catch { }
+                            }
+
+                        }
                     }
 
                     ///* Do not plot object > 500 cm */
@@ -138,5 +168,6 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
             } 
 
         }
+        
     }
 }
