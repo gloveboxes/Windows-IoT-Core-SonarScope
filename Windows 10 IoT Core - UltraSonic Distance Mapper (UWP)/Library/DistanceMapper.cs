@@ -6,7 +6,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Shapes;
 
-namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library
+namespace SonarScope.Library
 {
     public static class DistanceMapper
     {

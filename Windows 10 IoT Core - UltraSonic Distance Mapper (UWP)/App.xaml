@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.App"
+    x:Class="SonarScope.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_"
+    xmlns:local="using:SonarScope"
     RequestedTheme="Light">
 
 </Application>

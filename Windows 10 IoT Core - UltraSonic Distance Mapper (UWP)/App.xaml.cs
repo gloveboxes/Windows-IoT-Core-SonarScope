@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
+namespace SonarScope
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

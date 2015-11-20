@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.I2c;
 
-namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Communication
+namespace SonarScope.Library.Communication
 {
     public class ArduinoGateway
     {

@@ -4,10 +4,10 @@ using System.Threading.Tasks;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Shapes;
-using Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library;
-using Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Communication;
+using SonarScope.Library;
+using SonarScope.Library.Communication;
 
-namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
+namespace SonarScope
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -157,7 +157,7 @@ namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_
                     /* Plot distance into LiDAR map */
                     if (Distance > 0 && Distance < 270)
                     {
-                        Grid_Mapper.Children.Add(DistanceMapper.GetMapper(ScannerLine.Angle, (int)Distance));
+                        Grid_Mapper.Children.Add(Library.DistanceMapper.GetMapper(ScannerLine.Angle, (int)Distance));
                     }
 
                 });

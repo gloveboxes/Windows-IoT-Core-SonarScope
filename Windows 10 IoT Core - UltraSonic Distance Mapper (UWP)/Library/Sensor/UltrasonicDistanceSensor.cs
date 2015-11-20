@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Threading;
 using Windows.Devices.Gpio;
 
-namespace Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_.Library.Sensor
+namespace SonarScope.Library.Sensor
 {
     public class UltrasonicDistanceSensor
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Windows_10_IoT_Core___UltraSonic_Distance_Mapper__UWP_</RootNamespace>
-    <AssemblyName>Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)</AssemblyName>
+    <RootNamespace>SonarScope</RootNamespace>
+    <AssemblyName>SonarScope</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
