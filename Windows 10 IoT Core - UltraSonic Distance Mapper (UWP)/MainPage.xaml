@@ -17,10 +17,10 @@
 
                 <VariableSizedWrapGrid Margin="10" FlowDirection="LeftToRight" MaximumRowsOrColumns="2">
 
-                    <Rectangle Height="30" Width="30" Margin="5" Fill="Red"></Rectangle>
-                    <Rectangle Height="30" Width="30" Margin="5" Fill="Blue"></Rectangle>
-                    <Rectangle Height="30" Width="30" Margin="5" Fill="Green"></Rectangle>
-                    <Rectangle Height="30" Width="30" Margin="5" Fill="Yellow"></Rectangle>
+                    <Rectangle Height="30" Width="30" Margin="3" Fill="Red"></Rectangle>
+                    <Rectangle Height="30" Width="30" Margin="3" Fill="Blue"></Rectangle>
+                    <Rectangle Height="30" Width="30" Margin="3" Fill="Green"></Rectangle>
+                    <Rectangle Height="30" Width="30" Margin="3" Fill="Yellow"></Rectangle>
                     
                 </VariableSizedWrapGrid>
                 
@@ -38,11 +38,11 @@
             </Grid.Projection>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <!--<RowDefinition Height="Auto"/>-->
             </Grid.RowDefinitions>
 
             <!-- Radar Screen -->
-            <Grid Grid.Row="1" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <Grid Grid.Row="0" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <!-- PieSlices -->
                 <!-- 300cm PieSlice -->
                 <Shape:PieSlice VerticalAlignment="Bottom" HorizontalAlignment="Center" Radius="300" StartAngle="-70" EndAngle="70" Fill="Black" Stroke="#0d0" StrokeThickness="1" Height="Auto" Margin="-300,0"/>

@@ -46,7 +46,7 @@ namespace SonarScope.Library
             
             _Grid.RenderTransformOrigin = new Windows.Foundation.Point(0, 1);
 
-            int size = Distance / 10;
+            int size = (Distance / 10) + 4;
 
             /* Ellipse is the point that will be mapped on the specified distance from the origin */
             _Ellipse = new Ellipse();

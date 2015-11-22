@@ -33,7 +33,7 @@ namespace SonarScope
         const int MidpointServoDegrees = TotalServoDegrees / 2;
 
         Stopwatch frameTimer = new Stopwatch();
-        const int FrameTimeMilliseconds = 75;
+        const int FrameTimeMilliseconds = 60;
 
         ArduinoGateway gw = new ArduinoGateway();
         UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_26, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_16);
@@ -67,15 +67,14 @@ namespace SonarScope
 
                 UpdateUI(currentAngle, distance);
 
+                frameTimer.Stop();              
+
+                if (frameTimer.ElapsedMilliseconds < FrameTimeMilliseconds)
+                {
+                    await Task.Delay(FrameTimeMilliseconds - (int)frameTimer.ElapsedMilliseconds);
+                }
+
                 currentAngle = nextAngle;
-
-                frameTimer.Stop();
-
-                Debug.WriteLine(frameTimer.ElapsedMilliseconds.ToString());
-
-                var delay = frameTimer.ElapsedMilliseconds < FrameTimeMilliseconds ? FrameTimeMilliseconds - frameTimer.ElapsedMilliseconds : FrameTimeMilliseconds;
-
-                await Task.Delay((int)delay);
             }
         }
 
@@ -124,6 +123,8 @@ namespace SonarScope
         {
             if (ScannerLine.Angle == -MidpointServoDegrees || ScannerLine.Angle == MidpointServoDegrees)
             {
+                Debug.WriteLine(Grid_Mapper.Children.Count.ToString());
+
                 foreach (var item in Grid_Mapper.Children)
                 {
                     if ((item as Grid).Children.Count > 0)
