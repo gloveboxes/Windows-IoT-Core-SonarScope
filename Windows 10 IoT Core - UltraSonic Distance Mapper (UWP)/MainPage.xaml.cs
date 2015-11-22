@@ -33,7 +33,7 @@ namespace SonarScope
         const int MidpointServoDegrees = TotalServoDegrees / 2;
 
         Stopwatch frameTimer = new Stopwatch();
-        const int FrameTimeMilliseconds = 60;
+        const int FrameTimeMilliseconds = 75;
 
         ArduinoGateway gw = new ArduinoGateway();
         UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_26, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_16);
