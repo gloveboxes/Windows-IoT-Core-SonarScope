@@ -33,29 +33,23 @@ void setup()
 	Wire.onReceive(I2CReceived);
 }
 
+
 void loop() { /* Do nothing. Just wait for call-back 'onReceive' */ }
+
 
 /* This function will automatically be called when RPi2 sends data to this I2C slave */
 void I2CReceived(int NumberOfBytes)
 {
 	Position = Wire.read();
 
-	if (processing) { return; }
+	if (processing) { return; }  /* not 100% sure required. Can a new event occur while processing current event? */
 	processing = true;
-
-	if (Position < 0 || Position > 140) { return; }
-
 	
 	newPosition = Position;		/* WinIoT have sent position byte; read it */
-	digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-
  
+	digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level) 
 	MyServo.write(newPosition);  // Move servo to specified the position //
-
 	digitalWrite(13, LOW);
-	Wire.write()
 
 	processing = false;
 }
-
-
