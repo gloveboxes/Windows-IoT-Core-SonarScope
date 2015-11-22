@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using Windows.Devices.Gpio;
 
 namespace SonarScope.Library.Sensor
@@ -8,8 +9,7 @@ namespace SonarScope.Library.Sensor
     public class UltrasonicDistanceSensor
     {
         private GpioPin Pin_Trig, Pin_Echo;
-        private Stopwatch _StopWatch;
-        private double? _Distance;
+        Stopwatch sw = new Stopwatch();
 
         /// <summary>
         /// Available Gpio Pins. Refer: https://ms-iot.github.io/content/en-US/win10/samples/PinMappingsRPi2.htm
@@ -68,8 +68,6 @@ namespace SonarScope.Library.Sensor
 
         public UltrasonicDistanceSensor(AvailableGpioPin TrigPin, AvailableGpioPin EchoPin)
         {
-            _StopWatch = new Stopwatch();
-
             var gpio = GpioController.GetDefault();
 
             Pin_Trig = gpio.OpenPin((int)TrigPin);
@@ -82,13 +80,13 @@ namespace SonarScope.Library.Sensor
 
         public double GetDistance()
         {
-            var mre = new ManualResetEventSlim(false);
 
+            Pin_Trig.Write(GpioPinValue.Low);                     // ensure the trigger is off
+            Task.Delay(TimeSpan.FromMilliseconds(1)).Wait();  // wait for the sensor to settle
 
-            //Send a 10µs pulse to start the measurement
-            Pin_Trig.Write(GpioPinValue.High);
-            mre.Wait(TimeSpan.FromMilliseconds(0.01));
-            Pin_Trig.Write(GpioPinValue.Low);
+            Pin_Trig.Write(GpioPinValue.High);                          // turn on the pulse
+            Task.Delay(TimeSpan.FromMilliseconds(.01)).Wait();      // let the pulse run for 10 microseconds
+            Pin_Trig.Write(GpioPinValue.Low);                           // turn off the pulse
 
             var time = PulseIn(Pin_Echo, GpioPinValue.High, 20); // was 500ms
 
@@ -99,28 +97,27 @@ namespace SonarScope.Library.Sensor
 
         private double PulseIn(GpioPin pin, GpioPinValue value, ushort timeout)
         {
-            var sw = new Stopwatch();
-            var sw_timeout = new Stopwatch();
-
-            sw_timeout.Start();
+          
+            
+            sw.Restart();
 
             // Wait for pulse
-            while (pin.Read() != value)
+            while (sw.ElapsedMilliseconds < timeout && pin.Read() != value) {}
+
+            if (sw.ElapsedMilliseconds >= timeout)
             {
-                if (sw_timeout.ElapsedMilliseconds > timeout)
-                    return 0;
-            }
-            sw.Start();
+                sw.Stop();
+                return 0;
+            } 
+            sw.Restart();
 
             // Wait for pulse end
-            while (pin.Read() == value)
-            {
-                if (sw_timeout.ElapsedMilliseconds > timeout)
-                    return 0;
-            }
+            while (sw.ElapsedMilliseconds < timeout && pin.Read() == value) { }
+
             sw.Stop();
 
-            return sw.Elapsed.TotalSeconds;
+            return sw.ElapsedMilliseconds < timeout ? sw.Elapsed.TotalSeconds : 0;
         }
+        
     }
 }
