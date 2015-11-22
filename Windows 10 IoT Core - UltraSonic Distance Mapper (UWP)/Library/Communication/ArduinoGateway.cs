@@ -58,11 +58,15 @@ namespace SonarScope.Library.Communication
             }
         }
 
-        public void SetServoAngle(byte angle)
+        public void SetServoAngle(int angle)
         {
             Initialise();
-            I2CDevice.Write(new byte[] { angle });
-
+            try {
+                I2CDevice.Write(new byte[] { (byte)angle });
+            }
+            catch {
+                IsInitialised = false;
+            }
         }
     }
 }

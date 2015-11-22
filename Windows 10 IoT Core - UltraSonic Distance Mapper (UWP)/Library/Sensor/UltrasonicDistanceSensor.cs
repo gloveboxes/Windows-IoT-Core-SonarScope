@@ -90,15 +90,15 @@ namespace SonarScope.Library.Sensor
 
             var time = PulseIn(Pin_Echo, GpioPinValue.High, 20); // was 500ms
 
-            // multiply by speed of sound in milliseconds (34000) divided by 2 (cause pulse make rountrip)
-            var distance = time * 17164; // at 20 degrees at sea level
-            return distance;
+            // speed of sound is 34300 cm per second or 34.3 cm per millisecond
+            // since the sound waves traveled to the obstacle and back to the sensor
+            // I am dividing by 2 to represent travel time to the obstacle
+
+            return time * 34.3 / 2.0; // at 20 degrees at sea level
         }
 
         private double PulseIn(GpioPin pin, GpioPinValue value, ushort timeout)
         {
-          
-            
             sw.Restart();
 
             // Wait for pulse
@@ -116,7 +116,7 @@ namespace SonarScope.Library.Sensor
 
             sw.Stop();
 
-            return sw.ElapsedMilliseconds < timeout ? sw.Elapsed.TotalSeconds : 0;
+            return sw.ElapsedMilliseconds < timeout ? sw.Elapsed.TotalMilliseconds : 0;
         }
         
     }
