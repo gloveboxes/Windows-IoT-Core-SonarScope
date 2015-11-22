@@ -13,9 +13,9 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
 
-                <VariableSizedWrapGrid Margin="10" FlowDirection="LeftToRight" MaximumRowsOrColumns="2">
+                <VariableSizedWrapGrid FlowDirection="LeftToRight" MaximumRowsOrColumns="2" Margin="20">
 
                     <Rectangle Height="30" Width="30" Margin="3" Fill="Red"></Rectangle>
                     <Rectangle Height="30" Width="30" Margin="3" Fill="Blue"></Rectangle>
@@ -24,7 +24,7 @@
                     
                 </VariableSizedWrapGrid>
                 
-                <TextBlock Text="SONARScope&#8482;" FontSize="80" Foreground="Wheat" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBlock Text="SONARScope&#8482;" FontSize="80" Foreground="Wheat" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
             
             </StackPanel>
             

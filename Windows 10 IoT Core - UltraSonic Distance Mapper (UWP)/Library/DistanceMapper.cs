@@ -15,7 +15,7 @@ namespace SonarScope.Library
         private static Line _Line;
         private static CompositeTransform _CompositeTransform;
         private static RowDefinition _RowDefination;
-        
+
         /// <summary>
         /// Returns a grid containing line with exact length and in the rotation specified for LiDAR Map.
         /// </summary>
@@ -27,7 +27,7 @@ namespace SonarScope.Library
             /* Create a new composite transform for Rotation and set angle */
             _CompositeTransform = new CompositeTransform();
             _CompositeTransform.Rotation = Angle;
-            
+
             /* Crete new grid object and apply transformation */
             _Grid = new Grid();
             _Grid.RenderTransform = _CompositeTransform;
@@ -43,10 +43,10 @@ namespace SonarScope.Library
 
             _Grid.HorizontalAlignment = HorizontalAlignment.Center;
             _Grid.VerticalAlignment = VerticalAlignment.Bottom;
-            
+
             _Grid.RenderTransformOrigin = new Windows.Foundation.Point(0, 1);
 
-            int size = (Distance / 10) + 4;
+            int size = Distance / 10;
 
             /* Ellipse is the point that will be mapped on the specified distance from the origin */
             _Ellipse = new Ellipse();
@@ -54,30 +54,23 @@ namespace SonarScope.Library
             _Ellipse.Width = size;
             _Ellipse.RenderTransformOrigin = new Windows.Foundation.Point(0, 0);
             _Ellipse.Margin = new Thickness(-size, 0, -size, 0);
-            _Ellipse.Tag = System.DateTime.Now;
-            
-            // Create a duration of 2 seconds.
+
+
             Duration duration = new Duration(TimeSpan.FromSeconds(2.5));
-            // Create two DoubleAnimations and set their properties.
+
             DoubleAnimation opacityAnimation = new DoubleAnimation();
             opacityAnimation.Duration = duration;
+            opacityAnimation.To = 0;
+
             Storyboard justintimeStoryboard = new Storyboard();
             justintimeStoryboard.Duration = duration;
             justintimeStoryboard.Children.Add(opacityAnimation);
-           
+
             Storyboard.SetTarget(opacityAnimation, _Ellipse);
-                     
             Storyboard.SetTargetProperty(opacityAnimation, "Opacity");
-            opacityAnimation.To = 0;
-            
-            // Make the Storyboard a resource.
-            _Grid.Resources.Add("justintimeStoryboard", justintimeStoryboard);
 
-            // Begin the animation.
-            justintimeStoryboard.Begin();
-
-
-
+            _Grid.Resources.Add("justintimeStoryboard", justintimeStoryboard);   // Make the Storyboard a resource.
+            justintimeStoryboard.Begin();   // Begin the animation.
 
 
             /* Apply different color for different region like < 50cm will be red and so on */
@@ -85,7 +78,7 @@ namespace SonarScope.Library
             {
                 _Ellipse.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
             }
-            else if(Distance < 100)
+            else if (Distance < 100)
             {
                 _Ellipse.Fill = new SolidColorBrush(Color.FromArgb(255, 200, 100, 0));
             }
