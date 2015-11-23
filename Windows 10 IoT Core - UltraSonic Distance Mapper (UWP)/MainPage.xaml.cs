@@ -37,7 +37,7 @@ namespace SonarScope
         const int FrameTimeMilliseconds = 70;
 
         ArduinoGateway gw = new ArduinoGateway();
-        UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_26, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_16);
+        UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_20, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_22);
 
 
         public MainPage()
