@@ -108,6 +108,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="project.lock.json" />
     <None Include="Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
