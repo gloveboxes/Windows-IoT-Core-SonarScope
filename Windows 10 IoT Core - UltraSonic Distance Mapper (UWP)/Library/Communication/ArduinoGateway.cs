@@ -43,7 +43,7 @@ namespace SonarScope.Library.Communication
             try
             {
                 var settings = new I2cConnectionSettings(I2C_ADDRESS);
-                settings.BusSpeed = I2cBusSpeed.FastMode;
+                settings.BusSpeed = I2cBusSpeed.StandardMode;
 
                 string aqs = I2cDevice.GetDeviceSelector(I2cControllerName);  /* Find the selector string for the I2C bus controller                   */
                 var dis = await DeviceInformation.FindAllAsync(aqs);            /* Find the I2C bus controller device with our selector string           */
