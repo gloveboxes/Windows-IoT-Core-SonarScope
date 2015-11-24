@@ -65,7 +65,7 @@ namespace SonarScope.Library.Communication
                 I2CDevice.Write(new byte[] { (byte)angle });
             }
             catch {
-                IsInitialised = false;
+            //    IsInitialised = false;
             }
         }
     }
