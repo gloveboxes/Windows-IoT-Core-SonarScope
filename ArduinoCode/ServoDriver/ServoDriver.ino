@@ -11,7 +11,7 @@
 #include <Servo.h> 
 
 #define MyAddress 0x40
-#define Pin_Servo 3
+#define Pin_Servo 8
 
 /* Create object for servo motor */
 Servo MyServo;
@@ -22,12 +22,18 @@ int newPosition = 70;
 
 void setup()
 {
+
+//    Serial.begin(115200);
+//  while (!Serial) {
+//    ; // wait for serial port to connect. Needed for Leonardo only
+//  }
+//  
+
   pinMode(13, OUTPUT);
-  /* Initialize servo and move to initial position */
-  MyServo.attach(Pin_Servo);
+
+  MyServo.attach(Pin_Servo);    /* Initialize servo and move to initial position */
   
-  /* Initialize I2C Slave & assign call-back function 'onReceive' */
-  Wire.begin(MyAddress);
+  Wire.begin(MyAddress);    /* Initialize I2C Slave & assign call-back function 'onReceive' */
   Wire.onReceive(I2CReceived);
 }
 
@@ -38,7 +44,7 @@ void loop() {
 
     oldPosition = newPosition;
     MyServo.write(oldPosition);  // Move servo to specified the position //
-    
+
     digitalWrite(13, LOW);
   }
 }
@@ -47,5 +53,17 @@ void loop() {
 /* This function will automatically be called when RPi2 sends data to this I2C slave */
 void I2CReceived(int NumberOfBytes)
 {
-  newPosition = Wire.read();
+  int temp;
+  if (NumberOfBytes > 1) {  // only expecting one byte, so throw all bytes away and wait for next 1 byte transmission
+    for (int c = 0; c < NumberOfBytes; c++){
+       temp = Wire.read();
+    }
+  }
+  else {
+    temp = Wire.read();
+    if (temp >= 0 && temp <= 140)
+    {
+      newPosition = temp;
+    }
+  }
 }

@@ -10,17 +10,18 @@
 
 // replaced by dglover@microsoft.com
 using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.I2c;
 
 namespace SonarScope.Library.Communication
 {
-    public class ArduinoGateway
+    public class ArduinoGateway : IDisposable
     {
 
         public int I2C_ADDRESS { get; set; } = 64;
-        
+
         public static bool IsInitialised { get; private set; } = false;
 
         private static I2cDevice I2CDevice;
@@ -60,13 +61,14 @@ namespace SonarScope.Library.Communication
 
         public void SetServoAngle(int angle)
         {
+            byte data = (byte)angle;
             Initialise();
-            try {
-                I2CDevice.Write(new byte[] { (byte)angle });
-            }
-            catch {
-            //    IsInitialised = false;
-            }
+            I2cTransferResult result = I2CDevice.WritePartial(new byte[] { data });
+        }
+
+        public void Dispose()
+        {
+            I2CDevice.Dispose();
         }
     }
 }

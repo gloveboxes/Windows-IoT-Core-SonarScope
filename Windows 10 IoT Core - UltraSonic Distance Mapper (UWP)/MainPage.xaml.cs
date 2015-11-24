@@ -37,7 +37,7 @@ namespace SonarScope
         const int FrameTimeMilliseconds = 75;
 
         ArduinoGateway gw = new ArduinoGateway();
-        UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_26, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_16);
+        UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_12, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_22);
 
 
         public MainPage()
@@ -65,9 +65,9 @@ namespace SonarScope
 
                 nextAngle = CalculateNextAngle(currentAngle, ref direction);
 
-                MoveServo(nextAngle);  // more servo in readiness for next distance measurement       
+                MoveServo(nextAngle);  // more servo in readiness for next distance measurement   
 
-                UpdateUI(currentAngle, distance);
+                UpdateUI(currentAngle, distance);    
 
                 frameTimer.Stop();
 

@@ -12,6 +12,6 @@
     <UseEmulator>false</UseEmulator>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <UseAuthentication>false</UseAuthentication>
-    <RemoteDebugMachine>rpidg</RemoteDebugMachine>
+    <RemoteDebugMachine>minwinpc</RemoteDebugMachine>
   </PropertyGroup>
 </Project>
