@@ -35,8 +35,10 @@ void setup()
 void loop() {
   if (newPosition != oldPosition) {
     digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level) 
+
     oldPosition = newPosition;
-    MyServo.write(newPosition);  // Move servo to specified the position //
+    MyServo.write(oldPosition);  // Move servo to specified the position //
+    
     digitalWrite(13, LOW);
   }
 }
