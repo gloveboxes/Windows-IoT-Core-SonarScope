@@ -22,13 +22,13 @@ int newPosition = 70;
 
 void setup()
 {
-	pinMode(13, OUTPUT);
-	/* Initialize servo and move to initial position */
-	MyServo.attach(Pin_Servo);
-
-	/* Initialize I2C Slave & assign call-back function 'onReceive' */
-	Wire.begin(MyAddress);
-	Wire.onReceive(I2CReceived);
+  pinMode(13, OUTPUT);
+  /* Initialize servo and move to initial position */
+  MyServo.attach(Pin_Servo);
+  
+  /* Initialize I2C Slave & assign call-back function 'onReceive' */
+  Wire.begin(MyAddress);
+  Wire.onReceive(I2CReceived);
 }
 
 
