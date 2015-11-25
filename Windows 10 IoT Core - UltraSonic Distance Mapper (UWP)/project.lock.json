@@ -3,6 +3,17 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -1536,6 +1547,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -1546,6 +1565,17 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -3169,6 +3199,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -3179,6 +3217,17 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -4774,6 +4823,14 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -4784,6 +4841,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -6412,6 +6480,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -6422,6 +6498,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -8017,6 +8104,14 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -8027,6 +8122,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -9655,6 +9761,14 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -9665,6 +9779,17 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "Glovebox.IoT.Devices/1.0.14": {
+        "dependencies": {
+          "UnitsNet": "[3.20.0, )"
+        },
+        "compile": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Glovebox.IoT.Devices.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Collections": "[4.0.10, )",
@@ -11260,6 +11385,14 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UnitsNet/3.20.0": {
+        "compile": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll": {}
+        }
+      },
       "WinRTXamlToolkit.Windows/1.8.1": {
         "compile": {
           "lib/netcore451/WinRTXamlToolkit.dll": {}
@@ -11271,6 +11404,18 @@
     }
   },
   "libraries": {
+    "Glovebox.IoT.Devices/1.0.14": {
+      "sha512": "Ziutb8sbpunEGP2Khj4FzFC3guFH5CHR0AfJaiwvyOZa2WrVMJdXv6NSkFKtASgro3Fni4EkrKuNdbjxf40NwQ==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "CreateNugetPackage.bat",
+        "Glovebox.IoT.Devices.nuspec",
+        "lib/uap10.0/Glovebox.IoT.Devices.dll",
+        "package/services/metadata/core-properties/d5641b89a3064ab2b7c679b584fe421a.psmdcp"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "Package",
@@ -14619,6 +14764,20 @@
         "System.Xml.XmlSerializer.nuspec"
       ]
     },
+    "UnitsNet/3.20.0": {
+      "sha512": "wzR9ERTMywGKx3vmTkFxA3WEhgXle9oGRxgzM5PTi//NJ8XVFpTRoKUbhFMsY9snQypFfn6e3t0tp5O+SmPcog==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/net35/UnitsNet.dll",
+        "lib/net451/UnitsNet.dll",
+        "lib/portable-net40+sl5+win+wp80+wpa81/UnitsNet.dll",
+        "lib/portable-net45+win+wp80+wpa81/UnitsNet.dll",
+        "package/services/metadata/core-properties/a50c291cc7cc4861aa207d73f1c4ed84.psmdcp",
+        "UnitsNet.nuspec"
+      ]
+    },
     "WinRTXamlToolkit.Windows/1.8.1": {
       "sha512": "DQlGwXUhKofcR1RRTjinxSvMbCQm6+3vug2QFrCuwbktJ8v2M9fbKcQC6xF59ABuv8G/Qa4X5Rg/cq9XNgkilQ==",
       "type": "Package",
@@ -14663,6 +14822,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Glovebox.IoT.Devices >= 1.0.14",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "WinRTXamlToolkit.Windows >= 1.8.1"
     ],

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="SonarScope" Publisher="CN=Anurag" Version="1.0.0.0" />
+  <Identity Name="SonarScope" Publisher="CN=dglover" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="306d0e17-a043-4a30-92c8-53012e99e9f2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Windows IoT Core SonarScope</DisplayName>

@@ -1,5 +1,5 @@
-﻿using SonarScope.Library.Communication;
-using SonarScope.Library.Sensor;
+﻿using Glovebox.IoT.Devices.Sensors.Distance;
+using SonarScope.Library.Communication;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.UI.Core;
@@ -32,13 +32,13 @@ namespace SonarScope
         const int MaxServoDegrees = 140;
         const int TotalServoDegrees = MaxServoDegrees - MinServoDegrees;
         const int MidpointServoDegrees = TotalServoDegrees / 2;
+        const int stepsSize = 2;
 
         Stopwatch frameTimer = new Stopwatch();
-        const int FrameTimeMilliseconds = 75;
+        const int FrameTimeMilliseconds = 120;
 
         ArduinoGateway gw = new ArduinoGateway();
-        UltrasonicDistanceSensor DistanceSensor = new UltrasonicDistanceSensor(UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_12, UltrasonicDistanceSensor.AvailableGpioPin.GpioPin_22);
-
+        HCSR04 distanceSensor = new HCSR04(12, 22, 16);
 
         public MainPage()
         {
@@ -49,7 +49,7 @@ namespace SonarScope
 
         public async void ScannerTask()
         {
-            int direction = 1;
+            int direction = stepsSize;
             double distance;
             int currentAngle = MidpointServoDegrees;
             int nextAngle = 0;
@@ -61,7 +61,7 @@ namespace SonarScope
             {
                 frameTimer.Restart();  // measures time to sense distance, move servo and update UI 
 
-                distance = DistanceSensor.GetDistance();
+                distance = distanceSensor.GetDistance().Centimeters;
 
                 nextAngle = CalculateNextAngle(currentAngle, ref direction);
 
@@ -83,8 +83,8 @@ namespace SonarScope
 
         private int CalculateNextAngle(int currentAngle, ref int direction)
         {
-            if (currentAngle >= MaxServoDegrees) { direction = -1; }
-            else if (currentAngle <= MinServoDegrees) { direction = 1; }
+            if (currentAngle >= MaxServoDegrees) { direction = -stepsSize; }
+            else if (currentAngle <= MinServoDegrees) { direction = stepsSize; }
 
             return currentAngle + direction;
         }
@@ -103,7 +103,7 @@ namespace SonarScope
                 /* Convert current rotation from 0 to 140 into -70 to +70 */
                 ScannerLine.Angle = currentAngle - MidpointServoDegrees;
 
-                RemoveExpiredPoints();
+                RemoveExpiredPoints(currentAngle);
 
                 /* Plot distance into LiDAR map */
                 if (Distance > 0 && Distance < 270)
@@ -114,9 +114,9 @@ namespace SonarScope
             });
         }
 
-        private void RemoveExpiredPoints()
+        private void RemoveExpiredPoints(int currentAngle)
         {
-            if (ScannerLine.Angle == -MidpointServoDegrees || ScannerLine.Angle == MidpointServoDegrees)
+            if (currentAngle <= MinServoDegrees || currentAngle >= MaxServoDegrees)
             {
                 foreach (var item in Grid_Mapper.Children)
                 {

@@ -17,7 +17,8 @@
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Windows IoT Core SonarScope_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>53CF6BFB9665E71CBEA8C0B22979DEACF00B291B</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -91,6 +92,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="project.json" />
+    <None Include="Windows IoT Core SonarScope_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -98,7 +100,6 @@
     </Compile>
     <Compile Include="Library\Communication\ArduinoGateway.cs" />
     <Compile Include="Library\DistanceMapper.cs" />
-    <Compile Include="Library\Sensor\UltrasonicDistanceSensor.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -109,7 +110,6 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="project.lock.json" />
-    <None Include="Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
