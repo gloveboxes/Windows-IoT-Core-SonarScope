@@ -1,6 +1,6 @@
 ﻿{
   "dependencies": {
-    "Glovebox.IoT.Devices": "1.0.14",
+    "Glovebox.IoT.Devices": "1.0.15",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
     "WinRTXamlToolkit.Windows": "1.8.1"
   },

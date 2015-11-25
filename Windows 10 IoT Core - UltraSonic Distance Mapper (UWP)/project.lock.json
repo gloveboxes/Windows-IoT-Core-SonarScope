@@ -3,7 +3,7 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -1565,7 +1565,7 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -3217,7 +3217,7 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -4841,7 +4841,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -6498,7 +6498,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -8122,7 +8122,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -9779,7 +9779,7 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
-      "Glovebox.IoT.Devices/1.0.14": {
+      "Glovebox.IoT.Devices/1.0.15": {
         "dependencies": {
           "UnitsNet": "[3.20.0, )"
         },
@@ -11404,8 +11404,8 @@
     }
   },
   "libraries": {
-    "Glovebox.IoT.Devices/1.0.14": {
-      "sha512": "Ziutb8sbpunEGP2Khj4FzFC3guFH5CHR0AfJaiwvyOZa2WrVMJdXv6NSkFKtASgro3Fni4EkrKuNdbjxf40NwQ==",
+    "Glovebox.IoT.Devices/1.0.15": {
+      "sha512": "KCYrwjyHtlavMwukTpdFQq4jSBgrX5ZHQaLeocrXQJoDv85X8Reof3k5ljJ+Y1JxYR1Zj0/zmG+jE4b5nTqcyQ==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -11413,7 +11413,7 @@
         "CreateNugetPackage.bat",
         "Glovebox.IoT.Devices.nuspec",
         "lib/uap10.0/Glovebox.IoT.Devices.dll",
-        "package/services/metadata/core-properties/d5641b89a3064ab2b7c679b584fe421a.psmdcp"
+        "package/services/metadata/core-properties/2a6d02ac90cb4e9abbb36894ec8f33e8.psmdcp"
       ]
     },
     "Microsoft.CSharp/4.0.0": {
@@ -14822,7 +14822,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Glovebox.IoT.Devices >= 1.0.14",
+      "Glovebox.IoT.Devices >= 1.0.15",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "WinRTXamlToolkit.Windows >= 1.8.1"
     ],

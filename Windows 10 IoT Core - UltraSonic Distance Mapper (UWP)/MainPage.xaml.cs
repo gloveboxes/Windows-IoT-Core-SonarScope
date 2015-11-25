@@ -2,6 +2,7 @@
 using SonarScope.Library.Communication;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using UnitsNet;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Shapes;
@@ -38,7 +39,7 @@ namespace SonarScope
         const int FrameTimeMilliseconds = 120;
 
         ArduinoGateway gw = new ArduinoGateway();
-        HCSR04 distanceSensor = new HCSR04(12, 22, 16);
+        HCSR04 distanceSensor = new HCSR04(12, 22, Length.FromMeters(3));
 
         public MainPage()
         {
