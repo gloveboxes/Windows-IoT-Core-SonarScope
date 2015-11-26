@@ -18,7 +18,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Windows IoT Core SonarScope_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>53CF6BFB9665E71CBEA8C0B22979DEACF00B291B</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>E8B8A087D73A26345526E6AB621E1BC5CE31834E</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
