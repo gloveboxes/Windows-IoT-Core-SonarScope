@@ -1,12 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows IoT Core SonarScope", "Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)\Windows IoT Core SonarScope.csproj", "{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArduinoCode", "ArduinoCode", "{CCBB98E6-1629-439F-B6EC-45C3A5EF73D6}"
 	ProjectSection(SolutionItems) = preProject
+		..\Windows IoT Core Arduino Bridge\Arduino\BridgeDriver\BridgeDriver.ino = ..\Windows IoT Core Arduino Bridge\Arduino\BridgeDriver\BridgeDriver.ino
 		ArduinoCode\ServoDriver\ServoDriver.ino = ArduinoCode\ServoDriver\ServoDriver.ino
 	EndProjectSection
 EndProject

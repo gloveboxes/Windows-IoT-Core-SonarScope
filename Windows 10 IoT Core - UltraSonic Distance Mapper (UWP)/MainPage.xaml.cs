@@ -33,12 +33,14 @@ namespace SonarScope
         const int MaxServoDegrees = 140;
         const int TotalServoDegrees = MaxServoDegrees - MinServoDegrees;
         const int MidpointServoDegrees = TotalServoDegrees / 2;
-        const int stepsSize = 2;
+        const int stepsSize = 4;
 
         Stopwatch frameTimer = new Stopwatch();
-        const int FrameTimeMilliseconds = 120;
+        const int FrameTimeMilliseconds = 150;
 
-        ArduinoGateway gw = new ArduinoGateway();
+      //  ArduinoGateway gw = new ArduinoGateway();
+
+        Arduino.ArduinoBridge gw = new Arduino.ArduinoBridge() { ServoPin = 8 };
         HCSR04 distanceSensor = new HCSR04(12, 22, Length.FromMeters(3));
 
         public MainPage()
@@ -55,7 +57,7 @@ namespace SonarScope
             int currentAngle = MidpointServoDegrees;
             int nextAngle = 0;
 
-            gw.SetServoAngle(MidpointServoDegrees);  // set servo midpoint ready for first distance measure
+            gw.ServoPosition(MidpointServoDegrees);  // set servo midpoint ready for first distance measure
             await Task.Delay(500); // give servo enough time to get to rotation midpoint
 
             while (true)  // Scan infinitely
@@ -93,7 +95,7 @@ namespace SonarScope
         private void MoveServo(int position)
         {
             int ServoAngle = (TotalServoDegrees - position > 0) ? TotalServoDegrees - position : 0;
-            gw.SetServoAngle(ServoAngle);
+            gw.ServoPosition((ushort)ServoAngle);
         }
 
         private void UpdateUI(int currentAngle, double Distance)

@@ -98,6 +98,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Arduino\Bridge.cs" />
+    <Compile Include="Arduino\Pixel.cs" />
     <Compile Include="Library\Communication\ArduinoGateway.cs" />
     <Compile Include="Library\DistanceMapper.cs" />
     <Compile Include="MainPage.xaml.cs">
