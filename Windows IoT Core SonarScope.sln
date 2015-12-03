@@ -7,8 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows IoT Core SonarScope
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArduinoCode", "ArduinoCode", "{CCBB98E6-1629-439F-B6EC-45C3A5EF73D6}"
 	ProjectSection(SolutionItems) = preProject
-		..\Windows IoT Core Arduino Bridge\Arduino\BridgeDriver\BridgeDriver.ino = ..\Windows IoT Core Arduino Bridge\Arduino\BridgeDriver\BridgeDriver.ino
-		ArduinoCode\ServoDriver\ServoDriver.ino = ArduinoCode\ServoDriver\ServoDriver.ino
+		ArduinoCode\ServoDriver\BridgeDriver.ino = ArduinoCode\ServoDriver\BridgeDriver.ino
 	EndProjectSection
 EndProject
 Global

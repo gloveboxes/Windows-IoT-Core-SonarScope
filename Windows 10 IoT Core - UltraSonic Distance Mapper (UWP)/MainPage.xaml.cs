@@ -38,9 +38,9 @@ namespace SonarScope
         Stopwatch frameTimer = new Stopwatch();
         const int FrameTimeMilliseconds = 150;
 
-      //  ArduinoGateway gw = new ArduinoGateway();
 
         Arduino.ArduinoBridge gw = new Arduino.ArduinoBridge() { ServoPin = 8 };
+
         HCSR04 distanceSensor = new HCSR04(12, 22, Length.FromMeters(3));
 
         public MainPage()
