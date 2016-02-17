@@ -3,6 +3,8 @@
 Original Project Inspiration [Windows 10 IoT Core: UltraSonic Distance Mapper](https://microsoft.hackster.io/en-US/AnuragVasanwala/windows-10-iot-core-ultrasonic-distance-mapper-d94d63)
 
 
+<iframe width="420" height="315" src="https://www.youtube.com/embed/GKRDX3nHlks" frameborder="0" allowfullscreen></iframe>
+
 ![Sonar Scope](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScope.jpg)
 
 This project drives the servo over I2C bus from Windows IoT Core to Trinket Pro 3.3V Arduino board.
