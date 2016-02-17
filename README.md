@@ -20,3 +20,7 @@ Note the [Bridge Driver](https://github.com/gloveboxes/Windows-IoT-Core-SonarSco
 Servos and NeoPixels.
 
 ![Trinket Pro 3.3V](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScopeArduino.jpg)
+
+##Wiring
+
+![layout](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScope_bb.jpg)
