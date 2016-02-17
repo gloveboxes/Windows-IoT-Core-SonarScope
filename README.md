@@ -2,6 +2,7 @@
 
 Original Project Inspiration [Windows 10 IoT Core: UltraSonic Distance Mapper](https://microsoft.hackster.io/en-US/AnuragVasanwala/windows-10-iot-core-ultrasonic-distance-mapper-d94d63)
 
+[![Youtube](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/YouTube.JPG)](https://youtu.be/GKRDX3nHlks)
 
 <iframe width="420" height="315" src="https://www.youtube.com/embed/GKRDX3nHlks" frameborder="0" allowfullscreen></iframe>
 
