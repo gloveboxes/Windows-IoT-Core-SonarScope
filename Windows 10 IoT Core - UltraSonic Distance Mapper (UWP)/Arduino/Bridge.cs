@@ -1,15 +1,13 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.I2c;
 
-namespace SonarScope.Arduino
-{
-    class ArduinoBridge : IDisposable
-    {
+namespace SonarScope.Arduino {
+    class ArduinoBridge : IDisposable {
 
-        enum ArduinoCmd:byte
-        {
+        enum ArduinoCmd : byte {
             InitialiseNeoPixel = (byte)'I',     //Initialize NeoPixel
             SetNeoPixel = (byte)'P',               //set a NeoPixel pixel value
             DisplayNeoPixel = (byte)'D',         //render NeoPixel pixels to the display
@@ -21,17 +19,14 @@ namespace SonarScope.Arduino
 
 
 
-        class ArduinoPin
-        {
+        class ArduinoPin {
             private byte pinNumber;
-            public bool PinSet {get; private set;}
+            public bool PinSet { get; private set; }
             public bool Initialised { get; set; } = false;
 
-            public byte PinNumber
-            {
+            public byte PinNumber {
                 get { return pinNumber; }
-                set
-                {
+                set {
                     pinNumber = value;
                     PinSet = true;
                 }
@@ -60,14 +55,12 @@ namespace SonarScope.Arduino
 
 
 
-        private async Task EnsureInitializedAsync()
-        {
+        private async Task EnsureInitializedAsync() {
             if (IsInitialised) { return; }
 
-            try
-            {
+            try {
                 var settings = new I2cConnectionSettings(I2C_ADDRESS);
-                settings.BusSpeed = I2cBusSpeed.FastMode;
+                settings.BusSpeed = I2cBusSpeed.StandardMode;
 
                 string aqs = I2cDevice.GetDeviceSelector(I2cControllerName);  /* Find the selector string for the I2C bus controller                   */
                 var dis = await DeviceInformation.FindAllAsync(aqs);            /* Find the I2C bus controller device with our selector string           */
@@ -76,16 +69,13 @@ namespace SonarScope.Arduino
 
                 IsInitialised = true;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 throw new Exception("I2C Initialization Failed", ex);
             }
         }
 
-        private void InitNeoPixel(int length)
-        {
-            if (neoPixel.PinSet)
-            {
+        private void InitNeoPixel(int length) {
+            if (neoPixel.PinSet) {
                 ArdunioCmdPacket[0] = (byte)ArduinoCmd.InitialiseNeoPixel;
                 ArdunioCmdPacket[1] = (byte)(length >> 8);
                 ArdunioCmdPacket[2] = (byte)(length);
@@ -96,20 +86,16 @@ namespace SonarScope.Arduino
             }
         }
 
-        private void InitialiseI2c()
-        {
+        private void InitialiseI2c() {
             if (!IsInitialised) { EnsureInitializedAsync().Wait(); }
         }
 
-        public void FrameDraw(Pixel[] frame, int delayMilliseconds)
-        {
-            if (neoPixel.PinSet)
-            {
+        public void FrameDraw(Pixel[] frame, int delayMilliseconds) {
+            if (neoPixel.PinSet) {
                 InitialiseI2c();
                 if (!neoPixel.Initialised) { InitNeoPixel(frame.Length); }
 
-                for (int i = 0; i < frame.Length; i++)
-                {
+                for (int i = 0; i < frame.Length; i++) {
                     ArdunioCmdPacket[0] = (byte)ArduinoCmd.SetNeoPixel;  //Set Pixel
                     ArdunioCmdPacket[1] = (byte)(i >> 8);
                     ArdunioCmdPacket[2] = (byte)(i);
@@ -128,16 +114,23 @@ namespace SonarScope.Arduino
 
                 Task.Delay(delayMilliseconds).Wait();
             }
-            else
-            {
+            else {
                 throw new Exception("NeoPixel pin number not set");
             }
         }
 
-        public void ServoPosition(ushort position)
-        {
-            if (servo.PinSet)
-            {
+        public double GetDistance() {
+            byte[] result = new byte[1];
+
+            lock (DeviceLock) {
+                I2cTransferResult resultShow = I2CDevice.ReadPartial(result);
+            }
+
+            return result[0];
+        }
+
+        public void ServoPosition(ushort position) {
+            if (servo.PinSet) {
                 InitialiseI2c();
 
                 ArdunioCmdPacket[0] = (byte)ArduinoCmd.ServoMovePosition; // Render Frame
@@ -147,24 +140,20 @@ namespace SonarScope.Arduino
 
                 WriteI2cPacket(ArdunioCmdPacket);
             }
-            else
-            {
+            else {
                 throw new Exception("Servo pin number not set");
             }
         }
 
 
 
-        private void WriteI2cPacket(byte[] data)
-        {
-            lock (DeviceLock)
-            {
+        private void WriteI2cPacket(byte[] data) {
+            lock (DeviceLock) {
                 I2cTransferResult resultShow = I2CDevice.WritePartial(data);
             }
         }
 
-        public void Dispose()
-        {
+        public void Dispose() {
             I2CDevice.Dispose();
         }
     }

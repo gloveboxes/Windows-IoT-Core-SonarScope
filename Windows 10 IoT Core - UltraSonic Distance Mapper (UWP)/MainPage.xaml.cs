@@ -39,9 +39,9 @@ namespace SonarScope
         const int FrameTimeMilliseconds = 150;
 
 
-        Arduino.ArduinoBridge gw = new Arduino.ArduinoBridge() { ServoPin = 8 };
+        Arduino.ArduinoBridge gw = new Arduino.ArduinoBridge() { ServoPin = 4 };
 
-        HCSR04 distanceSensor = new HCSR04(12, 22, Length.FromMeters(3));
+    //    HCSR04 distanceSensor = new HCSR04(12, 22, Length.FromMeters(3));
 
         public MainPage()
         {
@@ -64,7 +64,9 @@ namespace SonarScope
             {
                 frameTimer.Restart();  // measures time to sense distance, move servo and update UI 
 
-                distance = distanceSensor.GetDistance().Centimeters;
+            //    distance = distanceSensor.GetDistance().Centimeters;
+
+                distance = gw.GetDistance();
 
                 nextAngle = CalculateNextAngle(currentAngle, ref direction);
 
