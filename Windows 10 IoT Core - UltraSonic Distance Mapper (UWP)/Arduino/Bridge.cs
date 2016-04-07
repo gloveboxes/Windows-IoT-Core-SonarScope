@@ -129,7 +129,7 @@ namespace SonarScope.Arduino {
             return result[0];
         }
 
-        public void ServoPosition(ushort position) {
+        public bool ServoPosition(ushort position) {
             if (servo.PinSet) {
                 InitialiseI2c();
 
@@ -138,7 +138,7 @@ namespace SonarScope.Arduino {
                 ArdunioCmdPacket[2] = (byte)(position);
                 ArdunioCmdPacket[3] = servo.PinNumber;
 
-                WriteI2cPacket(ArdunioCmdPacket);
+                return WriteI2cPacket(ArdunioCmdPacket);
             }
             else {
                 throw new Exception("Servo pin number not set");
@@ -147,9 +147,11 @@ namespace SonarScope.Arduino {
 
 
 
-        private void WriteI2cPacket(byte[] data) {
+        private bool WriteI2cPacket(byte[] data) {
             lock (DeviceLock) {
                 I2cTransferResult resultShow = I2CDevice.WritePartial(data);
+                if (resultShow.BytesTransferred == 0) { return false; }
+                return true;
             }
         }
 

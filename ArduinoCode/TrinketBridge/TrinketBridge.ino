@@ -36,7 +36,7 @@
 
   1 x Raspberry Pi 2 running WIndows 10 IoT Core
   1 x Trinket 3.3V https://www.adafruit.com/products/1500
-  1 x Servo, in this example using a Tower Pro SG-5010 with 140 degree sweep
+  1 x Servo, this sample uses a Tower Pro SG-5010 with 140 degree sweep
   1 x 1k resistor
   1 x 3.3 Zener Diode (see level shifter strategies - http://jamesreubenknowles.com/level-shifting-stragety-experments-1741)
   1 x mini breadboard
@@ -127,7 +127,7 @@ void i2CReceived(uint8_t  NumberOfBytes)
   I2C data packet format
   byte 0 = Command
   byte 1-2 = Command index
-  byte 3-5 = arbitory could be red, green, blue for a neopixel or set neopixel string size etc or pin numnders for neopixel or servo
+  byte 3-5 = arbitory based on scenario - could be red, green, blue for a neopixel or set neopixel string size etc or pin numnders for neopixel or servo
   ***************/
 
   deferServoRefresh = true;  

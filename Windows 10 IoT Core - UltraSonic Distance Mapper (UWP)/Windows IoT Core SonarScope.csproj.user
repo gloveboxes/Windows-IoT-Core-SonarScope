@@ -17,4 +17,7 @@
     <RemoteDebugMachine>RPiDD</RemoteDebugMachine>
     <AuthenticationMode>Universal</AuthenticationMode>
   </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+  </PropertyGroup>
 </Project>
