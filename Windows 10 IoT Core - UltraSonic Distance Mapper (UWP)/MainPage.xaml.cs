@@ -1,8 +1,12 @@
 ﻿using Glovebox.IoT.Devices.Sensors.Distance;
+using org.alljoyn.example.Sonar;
+using SonarScope.Library;
 using SonarScope.Library.Communication;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 using UnitsNet;
+using Windows.Devices.AllJoyn;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Shapes;
@@ -37,6 +41,13 @@ namespace SonarScope {
         const int FrameTimeMilliseconds = 150;
 
 
+        AllJoynBusAttachment sonarBusAttachment = new AllJoynBusAttachment();
+        SonarProducer sonarProducer;
+
+        ManualResetEvent controlEvent = new ManualResetEvent(true);
+        bool speechEnabled = false;
+
+
         Arduino.ArduinoBridge gw = new Arduino.ArduinoBridge() { ServoPin = 4 };
 
         //    HCSR04 distanceSensor = new HCSR04(12, 22, Length.FromMeters(3));
@@ -44,7 +55,18 @@ namespace SonarScope {
         public MainPage() {
             this.InitializeComponent();
 
+            InitialiseAllJoyn();
+
             Task.Run(() => ScannerTask());
+        }
+
+        void InitialiseAllJoyn()
+        {
+            sonarBusAttachment.AboutData.DefaultDescription = "Sonar Scope";
+            sonarBusAttachment.AboutData.SoftwareVersion = "2.0";
+            sonarProducer = new SonarProducer(sonarBusAttachment);
+            sonarProducer.Service = new SonarService(this);
+            sonarProducer.Start();
         }
 
         public async void ScannerTask() {
@@ -58,6 +80,8 @@ namespace SonarScope {
 
             while (true)  // Scan infinitely
             {
+                controlEvent.WaitOne();  // controlled by alljoyn interface
+
                 frameTimer.Restart();  // measures time to sense distance, move servo and update UI 
 
                 //    distance = distanceSensor.GetDistance().Centimeters; 
@@ -66,7 +90,7 @@ namespace SonarScope {
 
                 nextAngle = CalculateNextAngle(currentAngle, ref direction);
 
-                if (!MoveServo(nextAngle)) { continue; }  // more servo in readiness for next distance measurement   
+                if (!MoveServo(nextAngle)) { continue; }  // move servo in readiness for next distance measurement   
 
                 UpdateUI(currentAngle, distance);
 
@@ -120,6 +144,22 @@ namespace SonarScope {
                     }
                 }
             }
+        }
+
+        public void Stop()
+        {
+            controlEvent.Reset();
+            MoveServo(0);
+        }
+
+        public void Start()
+        {
+            controlEvent.Set();
+        }
+
+        public void Speech()
+        {
+            speechEnabled = !speechEnabled;
         }
     }
 }

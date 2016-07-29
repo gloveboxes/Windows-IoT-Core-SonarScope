@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows IoT Core SonarScope", "Windows 10 IoT Core - UltraSonic Distance Mapper (UWP)\Windows IoT Core SonarScope.csproj", "{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}"
 EndProject
@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArduinoCode", "ArduinoCode"
 		ArduinoCode\ServoDriver\BridgeDriver.ino = ArduinoCode\ServoDriver\BridgeDriver.ino
 		ArduinoCode\TrinketBridge\TrinketBridge.ino = ArduinoCode\TrinketBridge\TrinketBridge.ino
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SonarLibrary", "SonarLibrary\SonarLibrary.vcxproj", "{0ED72B5A-F3A1-4E79-852F-F64293040592}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,18 @@ Global
 		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x86.ActiveCfg = Release|x86
 		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x86.Build.0 = Release|x86
 		{CCE8FA7C-83AD-4822-AADA-505D411ECE2C}.Release|x86.Deploy.0 = Release|x86
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Debug|ARM.Build.0 = Debug|ARM
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Debug|x64.ActiveCfg = Debug|x64
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Debug|x64.Build.0 = Debug|x64
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Debug|x86.ActiveCfg = Debug|Win32
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Debug|x86.Build.0 = Debug|Win32
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Release|ARM.ActiveCfg = Release|ARM
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Release|ARM.Build.0 = Release|ARM
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Release|x64.ActiveCfg = Release|x64
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Release|x64.Build.0 = Release|x64
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Release|x86.ActiveCfg = Release|Win32
+		{0ED72B5A-F3A1-4E79-852F-F64293040592}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

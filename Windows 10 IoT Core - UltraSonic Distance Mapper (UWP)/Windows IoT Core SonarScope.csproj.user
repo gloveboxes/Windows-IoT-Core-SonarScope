@@ -14,7 +14,7 @@
     <UseEmulator>false</UseEmulator>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <UseAuthentication>false</UseAuthentication>
-    <RemoteDebugMachine>RPiDD</RemoteDebugMachine>
+    <RemoteDebugMachine>SonarScope</RemoteDebugMachine>
     <AuthenticationMode>Universal</AuthenticationMode>
   </PropertyGroup>
   <PropertyGroup>

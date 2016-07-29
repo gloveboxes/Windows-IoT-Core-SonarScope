@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>7ff83824-0e76-49fe-ad19-9b81da4ea2c0</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="AllJoynBusObjectManager.cpp" />
+    <ClCompile Include="AllJoynHelpers.cpp" />
+    <ClCompile Include="SonarConsumer.cpp" />
+    <ClCompile Include="SonarProducer.cpp" />
+    <ClCompile Include="SonarServiceEventAdapter.cpp" />
+    <ClCompile Include="SonarServiceEventArgs.cpp" />
+    <ClCompile Include="SonarSignals.cpp" />
+    <ClCompile Include="SonarWatcher.cpp" />
+    <ClCompile Include="TypeConversionHelpers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="AllJoynBusObjectManager.h" />
+    <ClInclude Include="AllJoynHelpers.h" />
+    <ClInclude Include="ISonarService.h" />
+    <ClInclude Include="SonarConsumer.h" />
+    <ClInclude Include="SonarEventArgs.h" />
+    <ClInclude Include="SonarMethodResults.h" />
+    <ClInclude Include="SonarProducer.h" />
+    <ClInclude Include="SonarServiceEventAdapter.h" />
+    <ClInclude Include="SonarServiceEventArgs.h" />
+    <ClInclude Include="SonarSignals.h" />
+    <ClInclude Include="SonarStructures.h" />
+    <ClInclude Include="SonarWatcher.h" />
+    <ClInclude Include="TypeConversionHelpers.h" />
+  </ItemGroup>
+</Project>

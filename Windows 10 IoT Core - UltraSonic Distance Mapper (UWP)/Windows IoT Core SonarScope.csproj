@@ -102,6 +102,7 @@
     <Compile Include="Arduino\Pixel.cs" />
     <Compile Include="Library\Communication\ArduinoGateway.cs" />
     <Compile Include="Library\DistanceMapper.cs" />
+    <Compile Include="Library\SonarService.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -137,6 +138,12 @@
     <SDKReference Include="WindowsIoT, Version=10.0.10240.0">
       <Name>Windows IoT Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SonarLibrary\SonarLibrary.vcxproj">
+      <Project>{0ed72b5a-f3a1-4e79-852f-f64293040592}</Project>
+      <Name>SonarLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
