@@ -1,0 +1,19 @@
+<node name="/sonar">
+  <interface name="org.alljoyn.example.Sonar">
+    <annotation name="org.alljoyn.Bus.Secure" value="false"/>
+    <description language="en">Interface for controlling a Sonar Scope</description>
+
+    <method name="Stop">
+      <description language="en">Stop</description>
+    </method>
+
+    <method name="Start">
+      <description language="en">Stop</description>
+    </method>
+
+   <method name="Speech">
+      <description language="en">Stop</description>
+    </method>
+
+  </interface>
+</node>

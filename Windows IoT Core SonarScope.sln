@@ -13,6 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArduinoCode", "ArduinoCode"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SonarLibrary", "SonarLibrary\SonarLibrary.vcxproj", "{0ED72B5A-F3A1-4E79-852F-F64293040592}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF0A2627-C343-412F-9A62-8B8A03558834}"
+	ProjectSection(SolutionItems) = preProject
+		Sonar Scope AllJoyn Definition\SonarScope.xml = Sonar Scope AllJoyn Definition\SonarScope.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
