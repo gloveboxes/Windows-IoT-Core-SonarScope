@@ -21,6 +21,27 @@ Servos and NeoPixels.
 
 ![Trinket Pro 3.3V](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScopeArduino.jpg)
 
+## Parts List
+
+1) Raspberry Pi 2 or 3
+2) [Adafruit Trinket - Mini Microcontroller - 3.3V Logic - MicroUSB](https://www.adafruit.com/products/1500)
+3) [Zenor Diode 3.3v 1N4728A](http://au.rs-online.com/web/p/zener-diodes/8050034/)
+4) 1K ohm resistor
+5) 1 x Servo. I used a [Tower Pro SG-5010](https://www.adafruit.com/product/155)
+6) HC-SR04 ultrasonic sensor. Widely avaiable sensor
+7) [Servo Power Connector](https://www.jaycar.com.au/2-1mm-dc-socket-with-screw-terminals/p/PA3713)
+
+
+## Powering the Servo
+
+Ideally you should power the servo from its own separate power supply. However, given the servo is under very light load and if you are careful not to stall the servo you will likely get away with powering the servo from the 5v pin on the Raspberry Pi.
+
+### Notes
+
+1) A lightly loaded servo will draw around 200 milliamps
+2) [Max current that can be supplied by 5V pin](http://raspberrypi.stackexchange.com/questions/42630/is-there-a-max-current-that-can-be-supplied-when-powering-the-pi-from-the-pins)
+
+
 ##Wiring
 
 ![layout](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScope_bb.jpg)
