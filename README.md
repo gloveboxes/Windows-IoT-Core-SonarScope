@@ -11,6 +11,8 @@ This project has had a lot of love, optimisation and polish espically around XAM
 
 ![Sonar Scope](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScopeMiniTrinket3.3v.jpg)
 
+![Sonar Scope](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScopeMiniTrinket3.3vAbove.jpg)
+
 This project drives the servo over I2C bus from Windows IoT Core to Trinket Mini 3.3V Arduino board.
 
 [Trinket Mini 3.3V](https://www.adafruit.com/products/1500) as it operates at the same voltage as the Raspberry Pi no logic level shifter required.
