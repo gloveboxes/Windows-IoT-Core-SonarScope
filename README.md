@@ -41,7 +41,7 @@ Ideally you should power the servo from its own separate power supply. However, 
 2. [Max current that can be supplied by 5V pin](http://raspberrypi.stackexchange.com/questions/42630/is-there-a-max-current-that-can-be-supplied-when-powering-the-pi-from-the-pins)
 
 
-##Wiring
+## Wiring
 
 ![layout](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScope_bb.jpg)
 
