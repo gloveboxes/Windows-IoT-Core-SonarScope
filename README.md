@@ -44,3 +44,9 @@ Ideally you should power the servo from its own separate power supply. However, 
 ##Wiring
 
 ![layout](https://raw.githubusercontent.com/gloveboxes/Windows-IoT-Core-SonarScope/master/Resources/SonarScope_bb.jpg)
+
+## Alternate wiring for ATtiny85
+
+I ended up swapping out the Adafruit Trinket for a ATtiny85 microcontroller. It's wired up as follows. I used an Arduino Uno to program the ATtiny85 as per these [instructions](https://www.instructables.com/id/Program-an-ATtiny-with-Arduino/). Worked very well and very fast.
+
+![ATtiny85](/Resources/Attiny85.jpg)
